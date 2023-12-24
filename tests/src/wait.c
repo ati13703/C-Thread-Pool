@@ -46,5 +46,6 @@ int main(int argc, char *argv[]){
 	if (!wait_each_job)
 		thpool_wait(thpool);
 
+	thpool_destroy(thpool);
 	return 0;
 }

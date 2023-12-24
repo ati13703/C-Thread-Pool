@@ -37,5 +37,6 @@ int main(int argc, char *argv[]){
 
 	printf("%d\n", sum);
 
+	thpool_destroy(thpool);
 	return 0;
 }

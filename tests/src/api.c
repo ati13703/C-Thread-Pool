@@ -40,7 +40,7 @@ int main(int argc, char *argv[]){
 		return -1;
 	};
 
-	// thpool_destroy(thpool);
+	thpool_destroy(thpool);
 
 	// sleep(1); // Sometimes main exits before thpool_destroy finished 100%
 
