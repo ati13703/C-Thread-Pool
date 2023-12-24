@@ -122,7 +122,6 @@ static __thread struct thread* my_thread;
 
 static void thread_hold(int sig) {
   if (my_thread != NULL) {
-    printf("Thread %i put on hold\n", my_thread - my_thread->pool->threads);
     while(CHECK_WAIT(sem_wait(&my_thread->pool->hold)));
   }
 }
@@ -167,6 +166,7 @@ static void* thread_function(void* arg) {
     CHECK_POST(sem_post(&thread->pool->next_free_thread));
   }
   my_thread = NULL;
+  return NULL;
 }
 
 /* returns NULL on error */
